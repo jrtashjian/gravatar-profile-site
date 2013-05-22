@@ -7,7 +7,7 @@ a { color:#5082B9; text-decoration:none; }
 
 #cover { position:fixed; top:0; bottom:0; }
 #cover { left:25%; right:0; background-position:center; background-size:cover; }
-#profile { width:25%; left:0; }
+#profile { width:25%; left:0; max-width:1000px; }
 
 .section { padding:10%; overflow:hidden; }
 
@@ -18,6 +18,10 @@ a { color:#5082B9; text-decoration:none; }
 #accounts { padding:10%; list-style-type:none; }
 #accounts li { float:left; }
 #accounts li a { display:block; margin:0 10px 10px 0; padding:5px 10px; color:#fff; background-color:#5082B9; }
+
+/* When a background image doesn't exist */
+.no-background #profile { width:auto; margin:0 auto; }
+.no-background #accounts { padding-top:5%; }
 
 /* Colors pulled from http://brandcolors.net */
 #accounts .blogger a    { background-color:#fc4f08; }
@@ -41,7 +45,7 @@ a { color:#5082B9; text-decoration:none; }
 	#cover, #profile { position:static; width:auto; }
 	#cover { height:500px; }
 	#bio { padding-bottom:0; }
-	#accounts { padding-top:0; }
+	#accounts, .no-background #accounts { padding-top:0; }
 }
 
 @media ( max-width: 500px ) {

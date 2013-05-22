@@ -42,10 +42,14 @@ $services = array(
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" user-scalable="no" >
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<body>
+<body<?php echo empty( $gravatar_profile->profileBackground ) ? ' class="no-background"' : ''; ?>>
 
 	<div id="container">
-		<div id="cover" style="background-image:url( <?php echo $gravatar_profile->profileBackground->url; ?> );"></div>
+
+		<?php if ( !empty( $gravatar_profile->profileBackground ) ) : ?>
+			<div id="cover" style="background-image:url( <?php echo $gravatar_profile->profileBackground->url; ?> );"></div>
+		<?php endif; ?>
+
 		<div id="profile">
 
 			<div id="bio" class="section">
