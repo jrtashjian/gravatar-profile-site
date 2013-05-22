@@ -14,6 +14,7 @@ if ( file_exists( GRAVATAR_CACHE_FILE ) && ( time() - filemtime( GRAVATAR_CACHE_
 	$gravatar_profile = json_decode( $json );
 }
 
+if ( empty( $gravatar_profile ) ) exit( 'Gravatar profile was not found.' );
 $gravatar_profile = $gravatar_profile->entry[0];
 
 $services = array(
