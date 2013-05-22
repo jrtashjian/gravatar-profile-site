@@ -1,0 +1,50 @@
+* { margin:0; padding:0; }
+body { font-family:"Helvetica Neue", Helvetica, sans-serif; font-size:14px; color:#333; -webkit-font-smoothing:antialiased; }
+
+h1 { font-size:32px; font-weight:500; line-height:1.5em; margin-bottom:1.5em; text-align:center; }
+p { font-size:15px; font-weight:300; line-height:1.6em; margin-bottom:1.6em; }
+a { color:#5082B9; text-decoration:none; }
+
+#cover { position:fixed; top:0; bottom:0; }
+#cover { left:25%; right:0; background-position:center; background-size:cover; }
+#profile { width:25%; left:0; }
+
+.section { padding:10%; overflow:hidden; }
+
+#bio { padding-bottom:0; }
+#bio img { display:block; margin:0 auto 4px; border-radius:80px; }
+#bio h1 { padding-top:23px; }
+
+#accounts { padding:10%; list-style-type:none; }
+#accounts li { float:left; }
+#accounts li a { display:block; margin:0 10px 10px 0; padding:5px 10px; color:#fff; background-color:#5082B9; }
+
+/* Colors pulled from http://brandcolors.net */
+#accounts .blogger a    { background-color:#fc4f08; }
+#accounts .facebook a   { background-color:#3b5998; }
+#accounts .flickr a     { background-color:#ff0084; }
+#accounts .foursquare a { background-color:#25a0ca; }
+#accounts .friendfeed a {} /* need color */
+#accounts .goodreads a  {} /* need color */
+#accounts .google a     { background-color:#db4a39; }
+#accounts .linkedin a   { background-color:#0e76a8; }
+#accounts .posterous a  {} /* need color */
+#accounts .tripit a     {} /* need color */
+#accounts .tumblr a     { background-color:#34526f; }
+#accounts .twitter a    { background-color:#00acee; }
+#accounts .vimeo a      { background-color:#86c9ef; }
+#accounts .wordpress a  { background-color:#21759b; }
+#accounts .yahoo a      { background-color:#720e9e; }
+#accounts .youtube a    { background-color:#c4302b; }
+
+@media ( max-width: 1000px ) {
+	#cover, #profile { position:static; width:auto; }
+	#cover { height:500px; }
+	#bio { padding-bottom:0; }
+	#accounts { padding-top:0; }
+}
+
+@media ( max-width: 500px ) {
+	#cover { height:150px; }
+	.section { float:none; width:auto; }
+}
