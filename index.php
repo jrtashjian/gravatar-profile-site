@@ -59,11 +59,13 @@ $services = array(
 				<p><?php echo nl2br( $gravatar_profile->aboutMe ); ?></p>
 			</div>
 
-			<ul id="accounts" class="section">
-				<?php foreach ( $gravatar_profile->accounts as $account ) : ?>
-					<li class="<?php echo $account->shortname; ?>"><a href="<?php echo $account->url; ?>"><?php echo array_key_exists( $account->shortname, $services ) ? $services[ $account->shortname ] : $account->shortname; ?></a></li>
-				<?php endforeach; ?>
-			</ul>
+			<?php if ( !empty( $gravatar_profile->accounts ) ) : ?>
+				<ul id="accounts" class="section">
+					<?php foreach ( $gravatar_profile->accounts as $account ) : ?>
+						<li class="<?php echo $account->shortname; ?>"><a href="<?php echo $account->url; ?>"><?php echo array_key_exists( $account->shortname, $services ) ? $services[ $account->shortname ] : $account->shortname; ?></a></li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
 
 		</div>
 	</div>
