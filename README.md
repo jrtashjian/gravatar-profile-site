@@ -4,6 +4,12 @@ Make yourself a personal profile site using information from your [Gravatar](htt
 
 Live Demo: [jrtashjian.me](http://jrtashjian.me)
 
+## Screenshots
+
+![Fullsize](screenshot-1.png)
+
+![1000px](screenshot-2.png) ![500px](screenshot-3.png)
+
 ## Setting Up Your Site
 
 1. Place the code where your site will reside.
