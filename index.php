@@ -45,7 +45,7 @@ $services = array(
 </head>
 <body<?php echo empty( $gravatar_profile->profileBackground ) ? ' class="no-background"' : ''; ?>>
 
-	<div id="container">
+	<div id="container" class="h-card vcard">
 
 		<?php if ( !empty( $gravatar_profile->profileBackground ) ) : ?>
 			<div id="cover" style="background-image:url( <?php echo $gravatar_profile->profileBackground->url; ?> );"></div>
@@ -54,15 +54,15 @@ $services = array(
 		<div id="profile">
 
 			<div id="bio" class="section">
-				<img height="80" width="80" src="<?php echo $gravatar_profile->thumbnailUrl; ?>?s=160" />
-				<h1><?php echo $gravatar_profile->displayName; ?></h1>
-				<p><?php echo nl2br( $gravatar_profile->aboutMe ); ?></p>
+				<img class="u-photo photo" height="80" width="80" src="<?php echo $gravatar_profile->thumbnailUrl; ?>?s=160" />
+				<h1 class="p-name fn"><?php echo $gravatar_profile->displayName; ?></h1>
+				<p class="p-note"><?php echo nl2br( $gravatar_profile->aboutMe ); ?></p>
 			</div>
 
 			<?php if ( !empty( $gravatar_profile->accounts ) ) : ?>
 				<ul id="accounts" class="section">
 					<?php foreach ( $gravatar_profile->accounts as $account ) : ?>
-						<li class="<?php echo $account->shortname; ?>"><a href="<?php echo $account->url; ?>"><?php echo array_key_exists( $account->shortname, $services ) ? $services[ $account->shortname ] : $account->shortname; ?></a></li>
+						<li class="<?php echo $account->shortname; ?>"><a class="u-url url" rel="me" href="<?php echo $account->url; ?>"><?php echo array_key_exists( $account->shortname, $services ) ? $services[ $account->shortname ] : $account->shortname; ?></a></li>
 					<?php endforeach; ?>
 				</ul>
 			<?php endif; ?>
