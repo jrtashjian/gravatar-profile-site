@@ -9,7 +9,9 @@ if ( file_exists( GRAVATAR_CACHE_FILE ) && ( time() - filemtime( GRAVATAR_CACHE_
 	$gravatar_profile = json_decode( $json );
 } else {
 	$hash = md5( strtolower( trim( GRAVATAR_EMAIL ) ) );
-	$json = file_get_contents( sprintf( 'https://www.gravatar.com/%s.json', $hash ) );
+	$lang = substr( $_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2 );
+	$context = stream_context_create( array( 'http' => array( 'header' => "Accept-Language: $lang" ) ) );
+	$json = file_get_contents( sprintf( 'https://www.gravatar.com/%s.json', $hash ), false, $context );
 	file_put_contents( GRAVATAR_CACHE_FILE, $json );
 	$gravatar_profile = json_decode( $json );
 }
